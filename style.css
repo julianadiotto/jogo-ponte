@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+body {
+    
+    background: url('imagem/img-full.jpg') no-repeat center center/cover;
+    font: normal 15pt Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0; 
+    color: #ffff00;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: #ffff00;
+    font: normal 20pt Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Margem de segurança para o celular */
+}
+
+.content {
+    text-align: center;
+    background-color: rgba(15, 22, 38, 0.9); 
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px; /* Limite de largura no PC */
+}
+
+section {
+    background: rgba(15, 22, 38, 0.9); 
+    border: 1px solid #30363d;
+    color: white; 
+    border-radius: 10px;    
+    padding: 20px;
+    text-align: center;
+    
+    /* AJUSTE CHAVE PARA RESPONSIVIDADE: */
+    width: 95%; /* Ocupa quase tudo em telas pequenas */
+    max-width: 600px; /* Não passa de 500px em telas grandes */
+    
+    margin: 10px auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+section #btnReiniciar {
+    display: none;
+}
+
+.feedback {
+    color: rgb(214, 53, 4);
+    font-weight: bold;
+}
+
+/* Botões maiores para facilitar o toque no celular */
+button {
+    background-color: rgb(184, 184, 37);
+    border: none;
+    border-radius: 10px;
+    margin: 10px 5px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(214, 53, 4);
+    transform: scale(1.05);
+}
+
+input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Animação para Erro (Shake/Tremor) */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Animação para Vitória (Pulso de Brilho) */
+@keyframes win-glow {
+  0% { box-shadow: 0 0 5px #ffff00; transform: scale(1); }
+  50% { box-shadow: 0 0 30px #ffff00; transform: scale(1.02); }
+  100% { box-shadow: 0 0 5px #ffff00; transform: scale(1); }
+}
+
+/* Classes que o JS vai aplicar */
+.shake-effect {
+    animation: shake 0.4s ease-in-out;
+    background-color: rgba(255, 0, 0, 0.4) !important;
+    border: 2px solid red !important;
+}
+
+.win-effect {
+    animation: win-glow 1s infinite ease-in-out;
+    background-color: rgba(255, 255, 0, 0.3) !important;
+    border: 2px solid #ffff00 !important;
+}
+
+/* Media Queries para ajustes finos */
+@media (max-width: 480px) {
+    body {
+        font-size: 12pt; /* Diminui um pouco a fonte em celulares pequenos */
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 15px;
+    }
+}

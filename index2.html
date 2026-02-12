@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">    
+    <title>Jogo Ponte de Vidro!</title>
+</head>
+<body>
+    <header>
+        <h1>Ponte de Vidro</h1>
+    </header>
+
+    <main class="container">
+        <section class="game-box">
+            <div id="msg">
+                <p id="counter">Ponte número: <strong>1</strong></p>
+                <div class="alert">
+                   <p id="alert-text">Cuidado: se escolher o vidro frágil, você perde!</p>
+                </div>
+                <p class="feedback" id="feedback"></p>
+                <p id="info-display"></p>
+            </div>  
+
+            <div id="instruction">
+                <p id="instruction-text">Escolha um número de <strong>1 a 6</strong>:</p>
+                <input type="number" id="input-choice" min="1" max="6" placeholder="0">
+                <button id="btn-verify" type="button">Verificar Passo</button>
+            </div>
+                
+            <div class="action-button">
+                <button id="btn-restart" type="button">Reiniciar Jogo</button>
+                <a href="index.html" class="link-voltar" rel="prev">Voltar ao início</a>
+            </div>         
+        </section>
+    </main>
+
+    <footer>
+        <p>Meu portfólio - Juliana Diotto de Oliveira.</p>
+    </footer>       
+    <script src="script.js"></script>
+</body>
+</html>
