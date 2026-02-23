@@ -41,16 +41,16 @@ function jogarRodada() {
 
     let escolha = Number(inputEscolha.value);
 
-    if (escolha < 1 || escolha > 6 || isNaN(escolha)) {
-        resultado.textContent = "Número inválido! Escolha um número de 1 a 6.";
+    if (escolha < 1 || escolha > 3 || isNaN(escolha)) {
+        resultado.textContent = "Número inválido! Escolha um número de 1 a 3.";
         inputEscolha.value = ""; 
         inputEscolha.focus();  
         return;
     }   
 
-    const pisoQuebrado = Math.floor(Math.random() * 6) + 1;
+    const pisoQuebrado = Math.floor(Math.random() * 3) + 1;
 
-    const cores = ["#ffff00", "#ffd700", "#ff8c00", "#ff4500", "#ff0000", "#e94560"];
+    const cores = ["#ffff00", "#ff4500", "#e94560"];
 
     if (escolha !== pisoQuebrado) {
         // --- ACERTOU O PASSO ---
@@ -58,14 +58,14 @@ function jogarRodada() {
         alerta.textContent = '';
         resultado.textContent = `Passou! O vidro frágil era o ${pisoQuebrado}.`;
         
-        if (contadorRodadas <= 6) {
+        if (contadorRodadas <= 3) {
             contador.textContent = "";
             const corAtual = cores[contadorRodadas - 1]; 
             pEscolha.style.color = corAtual;
             
             ordinalAtual = obterOrdinal(contadorRodadas)
             
-            pEscolha.textContent = `Você está na ${ordinalAtual} ponte. Escolha outro número de 1 a 6.`;
+            pEscolha.textContent = `Você está na ${ordinalAtual} ponte. Escolha outro número de 1 a 3.`;
             inputEscolha.focus();
         } else {
             // --- VITÓRIA TOTAL ---
@@ -111,7 +111,7 @@ function reiniciarJogo() {
 
     // REMOVE OS EFEITOS VISUAIS
     sectionJogo.classList.remove('shake-effect', 'win-effect');
-    pEscolha.className = "";
+    pEscolha.textContent = "";
 
     contador.textContent = 'Ponte número: 1';
     resultado.textContent = '';
@@ -131,10 +131,7 @@ function reiniciarJogo() {
 function obterOrdinal(contadorRodadas) {
     if (contadorRodadas === 1) return "primeira";   
     if (contadorRodadas === 2) return "segunda";
-    if (contadorRodadas === 3) return "terceira";
-    if (contadorRodadas === 4) return "quarta";
-    if (contadorRodadas === 5) return "quinta";
-    if (contadorRodadas === 6) return "última";    
+    if (contadorRodadas === 3) return "terceira";        
     
     return contadorRodadas; 
 }
