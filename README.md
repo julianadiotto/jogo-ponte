@@ -37,4 +37,6 @@ CSS3: Estilização moderna com Flexbox, Glassmorphism (transparências) e @keyf
 
 JavaScript: Controle de estado do jogo, manipulação de eventos e lógica de vitória/derrota.
 
+[Clique aqui para jogar](https://julianadiotto.github.io/ponte-jogo/)
+
 
